@@ -1,3 +1,13 @@
+.body{
+  background-image: url('./images/Bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  height: 610px;
+}
+
+
 .App {
   text-align: center;
 }

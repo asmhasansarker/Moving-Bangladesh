@@ -1,0 +1,24 @@
+[
+    {
+        "id":1,
+        "name": "BIKE",
+        "image": ""
+
+    },
+    {
+        "id":2,
+        "name": "CAR",
+        "image": "Car"
+    },
+    {
+        "id":3,
+        "name": "BUS",
+        "image": "Bus"
+    },
+    {
+        "id":4,
+        "name": "TRAIN",
+        "image": "Train"
+    }
+]
+
