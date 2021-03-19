@@ -12,25 +12,37 @@ import Contact from './Components/Contact/Contact';
 import Login from './Components/LogIn/Login';
 import Header from './Components/Header/Header';
 import { createContext, useState } from 'react';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import MyAccount from './Components/MyAccount/MyAccount';
 
 
 export const UserContext = createContext()
 
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState({})
+  const [user, setUser] = useState({
+    isSignedIn: false,
+    name: '',
+    email: '',
+    password: '',
+    photo: '',
+    error: '',
+    success: false,
+    newUser: false
+  })
   return (
     <div className="body">
-      <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <UserContext.Provider value={[user, setUser]}>
+        
         <Router>
           <Header></Header>
           <Switch>
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/destination/ride/:rideId">
+            <PrivateRoute path="/destination/ride/:rideId">
               <Destination></Destination>
-            </Route>
+            </PrivateRoute>
             <Route path="/blog">
               <Blog></Blog>
             </Route>
@@ -39,6 +51,9 @@ function App() {
             </Route>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/myaccount">
+              <MyAccount></MyAccount>
             </Route>
 
             <Route exact path="/">
