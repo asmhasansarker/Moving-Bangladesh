@@ -1,11 +1,14 @@
-
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { UserContext } from "../../App";
 import { useHistory, useLocation } from "react-router";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom";
 
 
 if (!firebase.apps.length) {
@@ -170,12 +173,12 @@ function Login() {
         });
     }
 
-    const login = () =>{
+    const login = () => {
         const newUserInfo = { ...user }
         newUserInfo.newUser = false;
         setUser(newUserInfo)
     }
-    const createAccount = () =>{
+    const createAccount = () => {
         const newUserInfo = { ...user }
         newUserInfo.newUser = true;
         setUser(newUserInfo)
@@ -214,7 +217,7 @@ function Login() {
                     <br />
 
                     <div className="w-75 mx-auto">
-                        <input className="form-control" type="text" name="email" onBlur={handleBlur} placeholder= { user.newUser ? 'Username or Email' : 'Email'} required />
+                        <input className="form-control" type="text" name="email" onBlur={handleBlur} placeholder={user.newUser ? 'Username or Email' : 'Email'} required />
                     </div>
                     <br />
                     <div className="w-75 mx-auto mb-3">
@@ -227,9 +230,21 @@ function Login() {
                         </div>
                     }
 
+                    {
+                        !user.newUser && <div className="d-flex">
+                            <div className="float-start w-50  mb-3">
+                                <input className="form-check-input " type="checkbox" value=" " ></input> Remember me
+
+                        </div>
+                            <div className="float-end w-50  mb-3">
+                                <Link to="/forgotpassword">Forgot Password</Link>
+                            </div>
+                        </div>
+                    }
 
 
-                    <input className="btn btn-warning w-75 mb-3" type="submit" value={user.newUser ? 'Create an account' : 'LogIn'} />
+
+                    <input className="btn btn-warning w-75 my-3" type="submit" value={user.newUser ? 'Create an account' : 'LogIn'} />
 
                     {user.newUser ?
                         <h6>Already have an account? <span style={{ cursor: 'pointer' }} onClick={login}>Login</span></h6> :
@@ -243,6 +258,11 @@ function Login() {
 
 
             <br />
+            {
+                user.success ? <h3 style={{ color: 'green' }}>User {user.newUser ? 'created' : 'Logged In'} successfully</h3> :
+                    <h3 style={{ color: 'red' }}>{user.error}</h3>
+            }
+
 
 
             <h3 className="text-center">Or</h3>
@@ -250,34 +270,16 @@ function Login() {
 
 
             <div>
-                <button className="btn btn-outline-primary w-25" onClick={handleFacebookSignIn}>Continue with Facebook</button>
+                <button className="btn btn-primary w-25" onClick={handleFacebookSignIn}><FontAwesomeIcon icon={faFacebook} /> Continue with Facebook</button>
                 <br />
-                <button className="btn btn-outline-primary mt-3 w-25" onClick={handleGoogleSignIn}>Continue with Google</button>
+                <button className="btn btn-success mt-3 w-25" onClick={handleGoogleSignIn}><FontAwesomeIcon icon={faGoogle} />  Continue with Google</button>
 
             </div>
 
-            <button className="btn btn-outline-primary mt-3" onClick={handleSignOut}>Sign Out</button>
+            {user.isSignedIn && <button className="btn btn-warning mt-3" onClick={handleSignOut}>Sign Out</button>}
 
             <br />
-            {/* {
-        user.isSignedIn ? <button className="btn btn-outline-primary" onClick={handleSignOut}>Sign Out</button> :
-          <button className="btn btn-outline-primary mt-3" onClick={handleGoogleSignIn}>Continue with Google</button>
-      }
-      <br /> */}
 
-            {/* <div>
-        <button className="btn btn-outline-primary" onClick={handleFacebookSignIn}>Continue with Facebook</button>
-
-        <button className="btn btn-outline-primary mt-3" onClick={handleGoogleSignIn}>Continue with Google</button>
-
-      </div> */}
-
-
-
-            {
-                user.success ? <h3 style={{ color: 'green' }}>User {user.newUser ? 'created' : 'Logged In'} successfully</h3> :
-                    <h3 style={{ color: 'red' }}>{user.error}</h3>
-            }
 
 
 

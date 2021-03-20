@@ -1,9 +1,11 @@
 .body{
-  background-image: url('./images/Bg.png');
+  /* background-image: url('./images/Bg.png'); */
+  background-image: url('https://img.huffingtonpost.com/asset/5fa3fd152400000a1f9ae10a.jpeg?cache=ZxsH6wZyAA&ops=800_450');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height:750px;
+  
   /* height: 610px; */
 }
 

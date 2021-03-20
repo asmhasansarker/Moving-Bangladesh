@@ -2,8 +2,8 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
+ 
 } from "react-router-dom";
 import Home from './Components/Home/Home';
 import Destination from './Components/Destination/Destination';
@@ -28,7 +28,9 @@ function App() {
     photo: '',
     error: '',
     success: false,
-    newUser: false
+    newUser: false,
+    imageURL:"",
+    rideName:"" 
   })
   return (
     <div className="body">

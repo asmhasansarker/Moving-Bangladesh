@@ -1,3 +1,9 @@
+.custom-design{
+    height: 250px;
+}
+.custom-design:hover h5{
+    
+}
 .card img{
     height:auto;
     width:100px;

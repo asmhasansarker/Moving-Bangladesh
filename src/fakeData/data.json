@@ -2,23 +2,23 @@
     {
         "id":1,
         "name": "BIKE",
-        "image": ""
+        "image": "https://i.pinimg.com/originals/10/06/df/1006df84fbdbab5362776c21cbcecd52.png"
 
     },
     {
         "id":2,
         "name": "CAR",
-        "image": "Car"
+        "image": "https://www.searchpng.com/wp-content/uploads/2019/01/BMW-Car-Png-image-copy.jpg"
     },
     {
         "id":3,
         "name": "BUS",
-        "image": "Bus"
+        "image": "https://lh3.googleusercontent.com/proxy/66JobdHZj4JepUe8sLJaFkKCti0uy0nFyLLZRYFfTuS8KlszWIG_0J-clqAeXA3UrppJhG48o7O_f629I0In_1BSxQC-7HFSvsGkDtc"
     },
     {
         "id":4,
         "name": "TRAIN",
-        "image": "Train"
+        "image": "https://e7.pngegg.com/pngimages/323/690/png-clipart-train-rail-transport-modern-s-mode-of-transport-public-transport.png"
     }
 ]
 
