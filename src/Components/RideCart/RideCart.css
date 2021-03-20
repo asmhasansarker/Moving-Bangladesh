@@ -1,12 +1,29 @@
 .custom-design{
     height: 250px;
-}
-.custom-design:hover h5{
+   
+
     
 }
+
 .card img{
     height:auto;
     width:100px;
     margin-left: 80px;
     margin-top: 40px;
 }
+
+
+  @media only screen and (max-width: 900px) {
+    .custom-design{
+        margin-top: 20px;
+        margin-left: 30%;
+    }
+  } 
+
+  
+@media only screen and (max-width: 600px) {
+    .custom-design{
+        margin-top: 20px;
+        margin-left: 10%;
+    }
+  } 

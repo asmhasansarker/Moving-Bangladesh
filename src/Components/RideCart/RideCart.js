@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import './RideCart.css'
 
 const RideCart = (props) => {
@@ -9,7 +8,7 @@ const RideCart = (props) => {
     const { name, image, id } = props.ride;
    
     return (
-        <div className="mx-2 ">
+        <div className="mx-2 single-card">
             <Link to={`/destination/ride/${id}`}>
                 <div className="card custom-design" style={{ width: "18rem" }}>
                     <img className="card-img-top" src={image} alt="" />

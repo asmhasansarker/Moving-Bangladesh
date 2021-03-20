@@ -7,8 +7,8 @@ import { UserContext } from "../../App";
 import { useHistory, useLocation } from "react-router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
+import './Login.css'
 
 
 if (!firebase.apps.length) {
@@ -186,11 +186,11 @@ function Login() {
 
 
     return (
-        <div className="text-center">
+        <div className="text-center ">
 
 
 
-            <div className="border p-3 w-50 mx-auto mt-5 bg-white">
+            <div className="border p-3 w-50 mx-auto mt-5 bg-white custom-form">
                 {
                     user.isSignedIn && <div>
                         <h3>Welcome, {user.name}</h3>
@@ -231,7 +231,7 @@ function Login() {
                     }
 
                     {
-                        !user.newUser && <div className="d-flex">
+                        !user.newUser && <div className="d-flex custom-check">
                             <div className="float-start w-50  mb-3">
                                 <input className="form-check-input " type="checkbox" value=" " ></input> Remember me
 
@@ -259,8 +259,8 @@ function Login() {
 
             <br />
             {
-                user.success ? <h3 style={{ color: 'green' }}>User {user.newUser ? 'created' : 'Logged In'} successfully</h3> :
-                    <h3 style={{ color: 'red' }}>{user.error}</h3>
+                user.success ? <h3 className="text-success bg-warning">User {user.newUser ? 'created' : 'Logged In'} successfully</h3> :
+                    <h3 className="text-danger bg-warning" >{user.error}</h3>
             }
 
 
@@ -270,9 +270,9 @@ function Login() {
 
 
             <div>
-                <button className="btn btn-primary w-25" onClick={handleFacebookSignIn}><FontAwesomeIcon icon={faFacebook} /> Continue with Facebook</button>
+                <button className="btn btn-primary w-25 custom-btn" onClick={handleFacebookSignIn}><FontAwesomeIcon icon={faFacebook} /> Continue with Facebook</button>
                 <br />
-                <button className="btn btn-success mt-3 w-25" onClick={handleGoogleSignIn}><FontAwesomeIcon icon={faGoogle} />  Continue with Google</button>
+                <button className="btn btn-success mt-3 w-25 custom-btn" onClick={handleGoogleSignIn}><FontAwesomeIcon icon={faGoogle} />  Continue with Google</button>
 
             </div>
 

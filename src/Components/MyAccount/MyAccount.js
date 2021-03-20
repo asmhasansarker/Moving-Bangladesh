@@ -5,8 +5,8 @@ import { UserContext } from '../../App';
 const MyAccount = () => {
     const [user] = useContext(UserContext)
     return (
-        <div>
-            <h1>This is {user.name} account</h1>
+        <div className="container">
+            <h1 className="text-center">Welcome, {user.name}</h1>
         </div>
     );
 };

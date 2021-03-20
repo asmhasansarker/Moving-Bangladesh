@@ -1,0 +1,34 @@
+.custom-form{
+
+}
+
+@media only screen and (max-width: 900px) {
+    .custom-form {
+      width: 80% !important;
+      margin-left: 3%;
+      margin-right: 3%;
+    }
+    .custom-form .custom-check{
+        width: 70% !important;
+        margin-left: 10%;
+        margin-right: 8%;
+    }
+    .custom-btn{
+        width: 60% !important;
+    }
+  }
+@media only screen and (max-width: 600px) {
+    .custom-form {
+      width: 90% !important;
+      margin-left: 3%;
+      margin-right: 3%;
+    }
+    .custom-form .custom-check{
+        width: 80% !important;
+        margin-left: 10%;
+        margin-right: 8%;
+    }
+    .custom-btn{
+        width: 80% !important;
+    }
+  }

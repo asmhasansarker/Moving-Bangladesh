@@ -2,12 +2,13 @@ import React, { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
+import './Header.css'
 
 const Header = () => {
     const [user] = useContext(UserContext)
     return (
         <div className="py-3">
-            <nav className="navbar navbar-expand-lg navbar-light ">
+            <nav className="navbar navbar-expand-md navbar-light ">
                 <div className="container">
                 <Link className="navbar-brand font-weight-bold" to="/">Moving Bangladesh</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -1,17 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import { useParams } from 'react-router';
-import Map from '../../images/Map.png'
 import AllTransports from '../../fakeData/data.json'
 import './Destination.css'
 import MyRideDetails from '../MyRideDetails/MyRideDetails';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltDown } from '@fortawesome/free-solid-svg-icons'
+import GoogleMap from '../GoogleMap/GoogleMap';
 
 
 const Destination = () => {
     const { rideId } = useParams();
     const [show, setshow] = useState(false)
-    const [allRides, setAllRides] = useState([])
     const [to, setTo] = useState('Mirpur')
     const [from, setFrom] = useState('Dhanmondi')
 
@@ -35,13 +34,13 @@ const Destination = () => {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-4">
+                <div className="col-md-4 col-sm-12 destination-area">
                     {!show && <div className="border border-1 p-3 bg-secondary text-white rounded">
                         <div className="mb-3">
                             <label htmlFor="exampleFormControlInput1" className="form-label">Pick From</label>
                             <select onChange={handleToChange} className="form-select form-select-lg mb-3 d-block p-2 w-100 rounded" aria-label=".form-select-lg example">
 
-                                <option value="Mirpur">Mirpur 1</option>
+                                <option className="py-3" value="Mirpur">Mirpur 1</option>
                                 <option value="Gulshan">Gulshan</option>
                                 <option value="Badda">Badda</option>
                             </select>
@@ -74,9 +73,12 @@ const Destination = () => {
 
 
                 </div>
-                <div className="col-8">
+                <div className="col-md-8 col-sm-12 map-area">
 
-                    <h1>Map will be shown here</h1>
+                    
+                    <div className="googleMap">
+                        <GoogleMap></GoogleMap>
+                    </div>
 
 
                 </div>
